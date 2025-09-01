@@ -33,11 +33,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import org.xyber.chat_kmp.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AuthView() {
+fun AuthView(
+    authViewModel: AuthViewModel,
+    navController: NavController
+) {
 
     Column(
         modifier = Modifier

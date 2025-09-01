@@ -41,6 +41,7 @@ android {
 }
 
 dependencies {
+    val nav_version = "2.9.3"
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -60,4 +61,5 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:34.1.0"))
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
+    implementation("androidx.navigation:navigation-compose:$nav_version")
 }

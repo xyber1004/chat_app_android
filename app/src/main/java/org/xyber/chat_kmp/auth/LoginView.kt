@@ -36,8 +36,7 @@ import org.xyber.chat_kmp.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginView () {
-    val authViewModel: AuthViewModel = AuthViewModel()
+fun LoginView (authViewModel: AuthViewModel) {
 
     var emailController by remember { mutableStateOf("") }
     var passwordController by remember { mutableStateOf("") }

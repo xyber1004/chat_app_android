@@ -1,3 +1,4 @@
+import android.os.Bundle
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -6,6 +7,13 @@ import com.google.firebase.firestore.firestore
 class AuthViewModel {
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()
     private var db: FirebaseFirestore = Firebase.firestore
+
+    private var _isLoggedIn: Boolean = auth.currentUser != null
+    var isLoggedIn: Boolean
+        get() = _isLoggedIn
+        set(value) {
+            _isLoggedIn = value
+        }
 
     fun signIn(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
@@ -35,5 +43,10 @@ class AuthViewModel {
 //                    onResult(false, task.exception?.message)
                 }
             }
-        }
+    }
+
+    fun setIsLoggedIn(loggedIn: Boolean, savedInstanceState: Bundle) {
+        this._isLoggedIn = loggedIn
+        savedInstanceState.putBoolean("isLoggedIn", loggedIn)
+    }
 }
