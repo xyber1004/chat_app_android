@@ -1,5 +1,6 @@
 package org.xyber.chat_kmp.home
 
+import AuthViewModel
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,7 +13,10 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 
 @Composable
-fun HomeView(navController: NavController) {
+fun HomeView(
+    authViewModel: AuthViewModel,
+    navController: NavController
+) {
     return Column(
         modifier = Modifier
             .fillMaxSize()

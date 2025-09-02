@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import org.xyber.chat_kmp.R
+import org.xyber.chat_kmp.routes.Screens
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -52,6 +53,7 @@ fun AuthView(
     ) {
         ElevatedButton(
             onClick = {
+                navController.navigate(Screens.LoginRoute.route)
             },
             modifier = Modifier
                 .fillMaxWidth()
@@ -82,7 +84,7 @@ fun AuthView(
 
         ElevatedButton(
             onClick = {
-
+                navController.navigate(Screens.RegisterRoute.route)
             },
             modifier = Modifier
                 .fillMaxWidth()

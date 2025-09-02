@@ -25,7 +25,13 @@ fun NavigationStack() {
             AuthView(authViewModel = authViewModel, navController = navController)
         }
         composable(Screens.HomeRoute.route) {
-            HomeView(navController = navController)
+            HomeView(authViewModel = authViewModel, navController = navController)
+        }
+        composable(Screens.LoginRoute.route) {
+            AuthView(authViewModel = authViewModel, navController = navController)
+        }
+        composable(Screens.RegisterRoute.route) {
+            AuthView(authViewModel = authViewModel, navController = navController)
         }
     }
 }

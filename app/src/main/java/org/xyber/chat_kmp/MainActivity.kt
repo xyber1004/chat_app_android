@@ -19,6 +19,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import org.xyber.chat_kmp.auth.AuthView
 import org.xyber.chat_kmp.home.HomeView
+import org.xyber.chat_kmp.routes.NavigationStack
 import org.xyber.chat_kmp.ui.theme.Chat_KMPTheme
 
 class MainActivity : ComponentActivity() {
@@ -29,13 +30,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             Chat_KMPTheme {
 
-                val isLoggedIn = false
-
                 Scaffold(modifier = Modifier.fillMaxSize()) {
-                    if (!isLoggedIn)
-                        AuthView()
-                    else
-                        HomeView()
+                    NavigationStack()
                 }
 
             }

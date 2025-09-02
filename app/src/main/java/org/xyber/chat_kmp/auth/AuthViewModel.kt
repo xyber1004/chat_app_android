@@ -8,7 +8,7 @@ class AuthViewModel {
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()
     private var db: FirebaseFirestore = Firebase.firestore
 
-    private var _isLoggedIn: Boolean = auth.currentUser != null
+    private var _isLoggedIn: Boolean = false
     var isLoggedIn: Boolean
         get() = _isLoggedIn
         set(value) {
